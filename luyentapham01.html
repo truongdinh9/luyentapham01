@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>luyentapham 01</title>
+</head>
+<body>
+Bài 1: Tạo hàm alertMessage()
+<br>
+<button onclick="alertMessage()">alertmes-bai1</button>
+<br>
+Bai 2: Tăng giá trị nhập vào lên 1
+<br>
+<label>
+    <input type="number" onchange="tang1(this.value)" >
+</label>
+<br/>
+Bài 3: Nhập 2 tham số và hiển thị kết quả
+<br/>
+<button onclick="bai3()">Bài 3</button>
+<br/>
+Bài 4: Thêm alert để hiển thị trước và sau result
+<br/>
+<button onclick="bai4()"> Bài 4</button>
+<br/>
+Bài 5: Tìm xem ngôi sao thuộc chòm sao nào.
+<br/>
+
+<label for="sao"></label><select id="sao">
+<option value="Polaris"> Polaris</option>
+<option value="Aldebaran" >Aldebaran</option>
+    <option value="Deneb">Deneb</option>
+    <option value="Vega">Vega</option>
+    <option value="Altair">Altair</option>
+    <option value="Dubhe">Dubhe</option>
+    <option value="Regulus">Regulus</option>
+</select>
+<button onclick="checksao(sao.value)"> check chòm sao</button>
+<br/>
+Chòm sao: <p id="htchomsao"></p>
+</body>
+<script>
+    function alertMessage() {
+        alert(" Xin chao!")
+    }
+function tang1(x) {
+      alert(parseInt(x)+1);
+}
+function bai3() {
+       let a=parseInt(prompt("Nhập a"));
+        let b=parseInt(prompt("Nhập b"));
+        if(a>b){alert(a+" > "+b)}else alert("a+b="+(a+b))
+
+}
+//Bai 4:
+    function bai4() {
+
+        let result = 0;
+        alert("Trước: "+ result);
+       result = addNumbers();
+       alert("Sau: "+ result);
+    }
+    function addNumbers() {
+       let firstNum = 4;
+       let secondNum = 8;
+        return firstNum + secondNum;
+    }
+//Bai 5
+    let ngoisao=["Polaris","Aldebaran","Deneb", "Vega", "Altair", "Dubhe", "Regulus"]
+    let chomsao=['Ursa Minor', 'Tarurus', 'Cygnus', 'Lyra', 'Aquila', 'Ursa Major', 'Leo' ]
+function checksao(x) {
+    for (let i=0;i<ngoisao.length;i++) {
+        if (ngoisao[i]===x){ htchomsao.innerHTML=chomsao[i] }
+    }
+}
+
+</script>
+</html>
